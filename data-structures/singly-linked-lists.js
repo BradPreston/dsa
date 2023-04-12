@@ -91,4 +91,21 @@ export class SinglyLinkedList {
 		node.val = value;
 		return true;
 	}
+	insert(index, value) {
+		if (index < 0 || index >= this.length) return false;
+		if (index === this.length) {
+			this.push(val);
+			return true;
+		}
+		if (index === 0) {
+			this.unshift(val);
+			return true;
+		}
+		const newNode = new Node(value);
+		let nodeBeforeInsert = this.get(index - 1);
+		newNode.next = nodeBeforeInsert.next;
+		nodeBeforeInsert.next = newNode;
+		this.length++;
+		return true;
+	}
 }
