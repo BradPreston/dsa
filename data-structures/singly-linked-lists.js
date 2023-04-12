@@ -108,4 +108,14 @@ export class SinglyLinkedList {
 		this.length++;
 		return true;
 	}
+	remove(index) {
+		if (index < 0 || index >= this.length) return null;
+		if (index === this.length - 1) return this.pop();
+		if (index === 0) return this.shift();
+		let previousNode = this.get(index - 1);
+		const removed = previousNode.next;
+		previousNode.next = removed.next;
+		this.length--;
+		return removed;
+	}
 }
