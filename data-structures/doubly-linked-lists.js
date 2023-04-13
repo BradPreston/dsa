@@ -77,22 +77,22 @@ export class DoublyLinkedList {
 	get(index) {
 		if (index < 0 || index >= this.length) return null;
 		const middle = this.length / 2;
+		let counter, current;
 		if (index <= middle) {
-			let counter = 0;
-			let current = this.head;
+			counter = 0;
+			current = this.head;
 			while (counter < index) {
 				current = current.next;
 				counter++;
 			}
-			return current;
 		} else {
-			let counter = this.length - 1;
-			let current = this.tail;
+			counter = this.length - 1;
+			current = this.tail;
 			while (counter > index) {
 				current = current.prev;
 				counter--;
 			}
-			return current;
 		}
+		return current;
 	}
 }
