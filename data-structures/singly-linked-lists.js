@@ -118,4 +118,20 @@ export class SinglyLinkedList {
 		this.length--;
 		return removed;
 	}
+	reverse() {
+		let node = this.head;
+		this.head = this.tail;
+		this.tail = node;
+		let next;
+		let prev = null;
+		let count = 0;
+		while (count < this.length) {
+			next = node.next;
+			node.next = prev;
+			prev = node;
+			node = next;
+			count++;
+		}
+		return this;
+	}
 }
