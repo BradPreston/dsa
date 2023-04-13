@@ -33,7 +33,7 @@ export class DoublyLinkedList {
 		return this;
 	}
 	pop() {
-		if(this.length === 0) return null;
+		if (this.length === 0) return null;
 		let currentTail = this.tail;
 		if (this.length === 1) {
 			this.head = null;
