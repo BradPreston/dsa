@@ -14,7 +14,13 @@ export class SinglyLinkedList {
 		this.tail = null;
 		this.length = 0;
 	}
-
+	print() {
+		let current = this.head;
+		while (current) {
+			console.log(current.val);
+			current = current.next;
+		}
+	}
 	push(val) {
 		let v = new Node(val);
 		if (this.head === null) {
@@ -26,13 +32,6 @@ export class SinglyLinkedList {
 		}
 		this.length++;
 		return this;
-	}
-	traverse() {
-		let current = this.head;
-		while (current) {
-			console.log(current.val);
-			current = current.next;
-		}
 	}
 	pop() {
 		if (this.head === null) return undefined;
