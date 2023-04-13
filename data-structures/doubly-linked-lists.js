@@ -32,4 +32,19 @@ export class DoublyLinkedList {
 		this.length++;
 		return this;
 	}
+	pop() {
+		if(this.length === 0) return null;
+		let currentTail = this.tail;
+		if (this.length === 1) {
+			this.head = null;
+			this.tail = null;
+		} else {
+			this.tail = currentTail.prev;
+			this.tail.next = null;
+			this.tail.prev = null;
+			currentTail.prev = null;
+		}
+		this.length--;
+		return currentTail;
+	}
 }
