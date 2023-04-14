@@ -135,4 +135,21 @@ export class DoublyLinkedList {
 		this.length--;
 		return nodeToRemove;
 	}
+	reverse() {
+		let node = this.head;
+		this.head = this.tail;
+		this.tail = node;
+		let next;
+		let prev = null;
+		let count = 0;
+		while (count < this.length) {
+			next = node.next;
+			node.next = prev;
+			node.prev = null;
+			prev = node;
+			node = next;
+			count++;
+		}
+		return this;
+	}
 }
