@@ -31,4 +31,15 @@ export class Stack {
     this.size++;
     return this;
   }
+  pop() {
+    if (this.size === 0) return null;
+    const oldFirst = this.first;
+    if (this.size === 1) {
+      this.last = null;
+    }
+    this.first = oldFirst.next;
+    oldFirst.next = null;
+    this.size--;
+    return oldFirst;
+  }
 }
