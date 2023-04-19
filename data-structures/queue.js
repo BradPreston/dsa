@@ -11,4 +11,11 @@ class Queue {
 		this.last = null;
 		this.size = 0;
 	}
+	print() {
+		let current = this.first;
+		while (current) {
+			console.log(current);
+			current = current.next;
+		}
+	}
 }
