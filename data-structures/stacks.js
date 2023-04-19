@@ -11,4 +11,17 @@ export class Stack {
     this.last = null;
     this.size = 0;
   }
+  push(val) {
+    const newNode = new Node(val);
+    if (this.size === 0) {
+      this.first = newNode;
+      this.last = newNode;
+    } else {
+      let currentFirst = this.first;
+      this.first = newNode;
+      newNode.next = currentFirst;
+    }
+    this.size++;
+    return this;
+  }
 }
